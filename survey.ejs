@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"> -->
+</head>
+<body>
+    <div>
+        <form action = "/results" method = "POST">
+            <h4>Your Name:</h4>
+            <input type="textarea" name='name'>
+            <h4>Dojo Location:</h4>
+            <select name="location">
+                    <% for (var x of locations) { %>
+                    <option value="<%= x %>"><%= x %></option>
+                    <% } %>
+            </select>
+            <h4>Favorite Language:</h4>
+            <select name="language">
+                <% for (var i of languages) { %>
+                <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select>
+            <h4>Comment (optional):</h4>
+            <input type="textarea" name='comment'>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</html>
